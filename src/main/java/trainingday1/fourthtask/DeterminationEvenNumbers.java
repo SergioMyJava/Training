@@ -11,15 +11,13 @@ public class DeterminationEvenNumbers {
                 continue;
             }
         }
-        if(numberEven>=2){
+        if (numberEven >= 2) {
             return true;
-        }
-        else
+        } else
             return false;
     }
 
-    public static void main(String[] args){
-        DeterminationEvenNumbers t = new DeterminationEvenNumbers();
-        System.out.println(t.definitionEven(4,6,8,10));
+    public static void main(String[] args) {
+
     }
 }

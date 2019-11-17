@@ -9,7 +9,6 @@ public class LastSquare {
     }
 
     public static void main(String[] args) {
-LastSquare n = new LastSquare();
-System.out.println(n.calculation(546));
+
     }
 }

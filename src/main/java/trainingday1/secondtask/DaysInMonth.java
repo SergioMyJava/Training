@@ -12,7 +12,6 @@ public class DaysInMonth {
         }
 
         public static void main (String[]args){
-            DaysInMonth test = new DaysInMonth();
-            System.out.println(test.calculateDaysInMonth(-5, 15));
+
         }
     }
