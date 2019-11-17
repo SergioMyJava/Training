@@ -1,19 +1,14 @@
 package trainingday1.secondtask;
 
-import java.time.DateTimeException;
 import java.time.LocalDate;
-import java.util.Scanner;
-
-import static trainingday1.util.ScannerUtil.getScanner;
 
 public class DaysInMonth {
-    private final int day = 1;
+    private final static int Day = 1;
 
     public int calculateDaysInMonth(int year, int month) {
-            LocalDate date = LocalDate.of(year, month, day);
+            LocalDate date = LocalDate.of(year, month, Day);
             int answer = date.lengthOfMonth();
             return answer;
-
         }
 
         public static void main (String[]args){

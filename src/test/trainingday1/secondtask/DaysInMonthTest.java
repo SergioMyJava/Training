@@ -1,4 +1,4 @@
-package secondtask;
+package trainingday1.secondtask;
 
 import org.junit.Assert;
 import org.junit.Test;
