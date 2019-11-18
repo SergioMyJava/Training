@@ -13,10 +13,7 @@ public class FarthestPointFromCenter {
         return (x1 * x1 + y1 * y1);
     }
 
-    public static void main (String[]args){
-
-        FarthestPointFromCenter test = new FarthestPointFromCenter();
-        System.out.println(test.calculateFarPoint(-15, 26, -37, 26));
+    public static void main(String[] args) {
 
     }
 }

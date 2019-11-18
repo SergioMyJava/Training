@@ -18,7 +18,6 @@ public class HoursMinutesInGivenSeconds {
     }
 
     public static void main(String[] args) {
-        HoursMinutesInGivenSeconds test = new HoursMinutesInGivenSeconds();
-        System.out.println(test.calculateHoursMinutes(45000));
+
     }
 }

@@ -6,12 +6,12 @@ public class DaysInMonth {
     private final static int Day = 1;
 
     public int calculateDaysInMonth(int year, int month) {
-            LocalDate date = LocalDate.of(year, month, Day);
-            int answer = date.lengthOfMonth();
-            return answer;
-        }
-
-        public static void main (String[]args){
-
-        }
+        LocalDate date = LocalDate.of(year, month, Day);
+        int answer = date.lengthOfMonth();
+        return answer;
     }
+
+    public static void main(String[] args) {
+
+    }
+}
