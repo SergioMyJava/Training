@@ -1,4 +1,4 @@
-package trainingday3.by.epam.training.entities;
+package trainingday3.ballsinbasket.by.epam.training.entities;
 
 import java.util.ArrayList;
 import java.util.List;

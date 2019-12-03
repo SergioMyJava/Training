@@ -1,6 +1,6 @@
-package trainingday3.by.epam.training;
+package trainingday3.ballsinbasket.by.epam.training;
 
-import trainingday3.by.epam.training.service.StartBasketBall;
+import trainingday3.ballsinbasket.by.epam.training.service.StartBasketBall;
 
 public class Main {
 
