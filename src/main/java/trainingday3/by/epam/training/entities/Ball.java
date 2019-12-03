@@ -1,4 +1,4 @@
-package trainingday3.src.main.java.by.epam.training.entities;
+package trainingday3.by.epam.training.entities;
 
 public class Ball {
     private final String color;

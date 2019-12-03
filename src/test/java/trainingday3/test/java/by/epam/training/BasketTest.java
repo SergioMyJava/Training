@@ -1,7 +1,7 @@
 package trainingday3.test.java.by.epam.training;
 
-import trainingday3.src.main.java.by.epam.training.entities.Ball;
-import trainingday3.src.main.java.by.epam.training.entities.Basket;
+import trainingday3.by.epam.training.entities.Ball;
+import trainingday3.by.epam.training.entities.Basket;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,7 +1,7 @@
-package trainingday3.src.main.java.by.epam.training.service;
+package trainingday3.by.epam.training.service;
 
-import trainingday3.src.main.java.by.epam.training.entities.Ball;
-import trainingday3.src.main.java.by.epam.training.entities.Basket;
+import trainingday3.by.epam.training.entities.Ball;
+import trainingday3.by.epam.training.entities.Basket;
 
 import java.util.Scanner;
 

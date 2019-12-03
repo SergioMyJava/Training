@@ -1,4 +1,4 @@
-package trainingday3.src.main.java.by.epam.training.entities;
+package trainingday3.by.epam.training.entities;
 
 import java.util.ArrayList;
 import java.util.List;
