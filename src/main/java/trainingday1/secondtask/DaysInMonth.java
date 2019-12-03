@@ -11,7 +11,7 @@ public class DaysInMonth {
             int answer = date.lengthOfMonth();
             return answer;
         }
-        System.out.print("The date is not entered correctly. Check: year is greater than 0 less then 2.400, " +
+        System.out.println("The date is not entered correctly. Check: year is greater than 0 less then 2.400, " +
                 "month is greater than 0 is less than or equal to 12.");
         return -1;
     }

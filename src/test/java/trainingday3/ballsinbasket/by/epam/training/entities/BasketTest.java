@@ -1,4 +1,4 @@
-package trainingday3.test.java.by.epam.training;
+package trainingday3.ballsinbasket.by.epam.training.entities;
 
 import trainingday3.ballsinbasket.by.epam.training.entities.Ball;
 import trainingday3.ballsinbasket.by.epam.training.entities.Basket;

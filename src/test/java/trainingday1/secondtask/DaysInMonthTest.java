@@ -15,13 +15,12 @@ public class DaysInMonthTest {
         Assert.assertEquals(31, forTests.calculateDaysInMonth(1, 12));
         Assert.assertEquals(30, forTests.calculateDaysInMonth(2019, 11));
         Assert.assertEquals(31, forTests.calculateDaysInMonth(2018, 1));
-        Assert.assertEquals(30, forTests.calculateDaysInMonth(3000, 11));
     }
 
-    @Test(expected = DateTimeException.class)
+    @Test
     public void notCorrectDate() {
-        Assert.assertEquals(31, forTests.calculateDaysInMonth(1000, 14));
-        Assert.assertEquals(31, forTests.calculateDaysInMonth(1000, 17));
-        Assert.assertEquals(31, forTests.calculateDaysInMonth(1000, 13));
+        Assert.assertEquals(-1, forTests.calculateDaysInMonth(3000, 11));
+        Assert.assertEquals(-1, forTests.calculateDaysInMonth(1000, 17));
+        Assert.assertEquals(-1, forTests.calculateDaysInMonth(10000, 13));
     }
 }
