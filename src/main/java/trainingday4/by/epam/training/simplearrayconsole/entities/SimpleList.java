@@ -1,4 +1,4 @@
-package trainingday4.by.epam.training.simplearrayconsole.simplearray;
+package trainingday4.by.epam.training.simplearrayconsole.entities;
 
 public interface SimpleList {
     boolean add(int value);
