@@ -13,6 +13,6 @@ public class MinMaxInArray {
                 max = arr[i];
             }
         }
-        return new int[]{min,max};
+        return new int[]{min, max};
     }
 }

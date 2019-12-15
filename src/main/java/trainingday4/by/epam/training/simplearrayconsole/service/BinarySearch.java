@@ -2,9 +2,16 @@ package trainingday4.by.epam.training.simplearrayconsole.service;
 
 public class BinarySearch {
 
+    public int search(int[] sortedArray, int key) {
+        return binarySearch(sortedArray, key, 0, sortedArray.length);
+    }
+
     public int binarySearch(int[] sortedArray, int key, int low, int high) {
         int index = -1;
 
+        if (key > high) {
+            return -1;
+        }
         while (low <= high) {
             int mid = (low + high) / 2;
             if (sortedArray[mid] < key) {

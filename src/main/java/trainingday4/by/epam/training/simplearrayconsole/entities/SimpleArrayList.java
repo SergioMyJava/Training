@@ -4,7 +4,7 @@ import java.util.Collection;
 
 public class SimpleArrayList implements SimpleList {
     private int[] array;
-    private static final int DEFAULT_CAPACITY = 10;
+    private static final int DEFAULT_CAPACITY = 2;
     private int size = 0;
     private static int counterOfCreatedArrays;          // for calculation hashCode
     private int counterOfCreatedArraysInObj;            // for calculation hashCode
@@ -14,10 +14,9 @@ public class SimpleArrayList implements SimpleList {
     }
 
     public void setArray(int[] modifiedArray) {
-        if(modifiedArray != null) {
+        if (modifiedArray != null) {
             this.array = modifiedArray;
-        }
-        else{
+        } else {
             throw new IllegalArgumentException("cannot change the array to null.");
         }
     }
@@ -101,7 +100,7 @@ public class SimpleArrayList implements SimpleList {
         }
         if (array.length == size) {
             int[] oldArray = array;
-            int[] newArray = new int[array.length * 2];
+            int[] newArray = new int[array.length + 1];
             for (int i = 0; i < oldArray.length; i++) {
                 newArray[i] = oldArray[i];
             }
@@ -153,10 +152,12 @@ public class SimpleArrayList implements SimpleList {
 
     @Override
     public int hashCode() {
+        if (array == null) {
+            return 0;
+        }
         int hash = 0;
-        int cons = 32;
         for (int i = 0; i < array.length; i++) {
-            hash += array[i] * cons + 1 + counterOfCreatedArraysInObj;
+            hash = 32 * hash + array[i];
         }
         return hash;
     }

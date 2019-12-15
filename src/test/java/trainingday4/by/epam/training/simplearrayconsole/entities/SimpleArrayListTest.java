@@ -80,8 +80,8 @@ public class SimpleArrayListTest {
 
     @Test
     public void testhashCode() {
-        Assert.assertEquals(500, testArray1.hashCode());
-        Assert.assertEquals(498, testArray2.hashCode());
-        Assert.assertEquals(28116, testArray3.hashCode());
+        Assert.assertEquals(167772160, testArray1.hashCode());
+        Assert.assertEquals(35754144, testArray2.hashCode());
+        Assert.assertEquals(16131046, testArray3.hashCode());
     }
 }

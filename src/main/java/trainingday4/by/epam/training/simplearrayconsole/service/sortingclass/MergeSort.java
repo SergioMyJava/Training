@@ -2,11 +2,7 @@ package trainingday4.by.epam.training.simplearrayconsole.service.sortingclass;
 
 public class MergeSort {
 
-    public int[] sort(int[] arr) {
-        return mergeSort(arr);
-    }
-
-    private int[] mergeSort(final int[] array) {
+    public int[] sort(final int[] array) {
 
         if (array.length <= 1) {
             return array;
@@ -25,8 +21,8 @@ public class MergeSort {
             right[j] = array[midpoint + j];
         }
 
-        left = mergeSort(left);
-        right = mergeSort(right);
+        left = sort(left);
+        right = sort(right);
 
         return merge(left, right);
     }

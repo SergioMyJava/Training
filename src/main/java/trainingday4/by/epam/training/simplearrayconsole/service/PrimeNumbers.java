@@ -24,7 +24,7 @@ public class PrimeNumbers {
     public boolean chekForPrime(int input) {
         boolean isComposite = false;
         int i;
-        if(input == 1){
+        if (input == 1) {
             return false;
         }
         for (i = 2; i < input; i++) {
