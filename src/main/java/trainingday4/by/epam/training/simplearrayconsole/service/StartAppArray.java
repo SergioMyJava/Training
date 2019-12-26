@@ -1,6 +1,10 @@
 package trainingday4.by.epam.training.simplearrayconsole.service;
 
 import trainingday4.by.epam.training.simplearrayconsole.entities.SimpleArrayList;
+import trainingday4.by.epam.training.simplearrayconsole.service.additionalfeaturesarray.BinarySearch;
+import trainingday4.by.epam.training.simplearrayconsole.service.additionalfeaturesarray.MinMaxInArray;
+import trainingday4.by.epam.training.simplearrayconsole.service.additionalfeaturesarray.PrimeNumbers;
+import trainingday4.by.epam.training.simplearrayconsole.service.additionalfeaturesarray.ThreeDigitNumbers;
 import trainingday4.by.epam.training.simplearrayconsole.service.sortingclass.BubbleSort;
 import trainingday4.by.epam.training.simplearrayconsole.service.sortingclass.MergeSort;
 import trainingday4.by.epam.training.simplearrayconsole.service.sortingclass.QuickSort;

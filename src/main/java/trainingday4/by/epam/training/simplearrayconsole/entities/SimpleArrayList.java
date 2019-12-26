@@ -4,13 +4,15 @@ import java.util.Collection;
 
 public class SimpleArrayList implements SimpleList {
     private int[] array;
-    private static final int DEFAULT_CAPACITY = 2;
+    private static final int DEFAULT_CAPACITY = 10;
     private int size = 0;
-    private static int counterOfCreatedArrays;          // for calculation hashCode
-    private int counterOfCreatedArraysInObj;            // for calculation hashCode
 
     public int[] getArray() {
-        return array;
+        int[] toReturn = new int[size];
+        for(int i = 0;i<toReturn.length;i++){
+            toReturn[i] = array[i];
+        }
+        return toReturn;
     }
 
     public void setArray(int[] modifiedArray) {
@@ -22,17 +24,14 @@ public class SimpleArrayList implements SimpleList {
     }
 
     public SimpleArrayList() {
-        changeCounterOfCreatedArrays();
         this.array = new int[DEFAULT_CAPACITY];
     }
 
     public SimpleArrayList(int capacity) {
         if (capacity > 0) {
-            changeCounterOfCreatedArrays();
             array = new int[capacity];
         }
         if (capacity == 0) {
-            changeCounterOfCreatedArrays();
             this.array = new int[DEFAULT_CAPACITY];
         }
         if (capacity < 0) {
@@ -43,7 +42,6 @@ public class SimpleArrayList implements SimpleList {
 
     public SimpleArrayList(Collection<Integer> c) {
         if (c != null) {
-            changeCounterOfCreatedArrays();
             array = new int[c.size()];
             size = c.size();
             int i = 0;
@@ -51,14 +49,8 @@ public class SimpleArrayList implements SimpleList {
                 array[i++] = a;
             }
         } else {
-            changeCounterOfCreatedArrays();
             array = new int[DEFAULT_CAPACITY];
         }
-    }
-
-    public void changeCounterOfCreatedArrays() {
-        ++counterOfCreatedArrays;
-        counterOfCreatedArraysInObj = counterOfCreatedArrays;
     }
 
     @Override

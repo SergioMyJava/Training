@@ -1,4 +1,4 @@
-package trainingday4.by.epam.training.simplearrayconsole.service;
+package trainingday4.by.epam.training.simplearrayconsole.service.additionalfeaturesarray;
 
 import java.util.LinkedList;
 import java.util.List;

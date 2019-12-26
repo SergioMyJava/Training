@@ -39,17 +39,7 @@ public class MinimumMaxRowElements {
     }
 
     public static void main(String[] args) {
-        int[][] te = new int[][]{{0},
-                {1, 2, 3, 4},
-                {12, 34, 45},
-                {1, 2, 3, 4, 5, 5}};
-        int[][] enter = MaxtoMinElementsInRow(te);
-        for (int i = 0; i < enter.length; i++) {
-            for (int y = 0; y < enter[i].length; y++) {
-                System.out.print(enter[i][y] + " ");
-            }
-            System.out.println();
-        }
+
     }
 }
 
