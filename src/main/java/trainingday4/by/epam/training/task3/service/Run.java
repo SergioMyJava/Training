@@ -7,11 +7,25 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Task 3
+ * Программа обработки текста, который может быть получен как с консоли, так и с файла.
+ * 1. В каждом слове k-ю букву заменить заданным символом. Если k больше длины слова,
+ * корректировку не выполнять.
+ * 2. В тексте после буквы Р, если она не последняя в слове, ошибочно напечатана буква А // как определить что ОШИБОЧНО?
+ * вместо О. Внести исправления в текст.                                                 // или любую А менять на О?
+ * 3. В тексте слова заданной длины заменить указанной подстрокой, длина которой может
+ * не совпадать с длиной слова.
+ * 4. Из небольшого текста удалить все символы, кроме пробелов, не являющиеся буквами.
+ * Между последовательностями подряд идущих букв оставить хотя бы один пробел.
+ * 5. Из текста удалить все слова заданной длины, начинающиеся на согласную букву.
+ */
+
 public class Run {
     Scanner scan;
     String[] primaryArrayStrings;
     String[] primaryArrayStringChanged;
-    TextHandler forWork;
+    TextHandler stringTool;
 
     public void start() throws IOException {
         System.out.println("Where do you want to enter the string : 1. From file(will be loaded from a file in the root" +
@@ -57,9 +71,10 @@ public class Run {
                 "4. From the small text, delete all characters except spaces that are not letters. Between sequences of consecutive letters, leave at least one space.\n" +
                 "5. From the text, delete all words of a given length starting with a consonant." +
                 "6. exit.");
-        if(forWork == null){
-            forWork = new TextHandler();
+        if(stringTool == null){
+            stringTool = new TextHandler();
         }
+        primaryArrayStringChanged = new String[primaryArrayStrings.length];
         scan = new Scanner(System.in);
         if (scan.hasNext()) {
             int chouseUser = scan.nextInt();
@@ -70,10 +85,21 @@ public class Run {
                     workWithString();
                     break;
                 case 2:
+                    wrongLetterA(primaryArrayStrings);
+                    printResultingString(primaryArrayStringChanged);
+                    workWithString();
                 case 3:
-
+                    wordSubstitution();
+                    printResultingString(primaryArrayStringChanged);
+                    workWithString();
                 case 4:
+                    leaveOnlyLettersAndSpaces();
+                    printResultingString(primaryArrayStringChanged);
+                    workWithString();
                 case 5:
+                    givenLengthStartingWithVowel();
+                    printResultingString(primaryArrayStringChanged);
+                    workWithString();
                 case 6:
                     scan.close();
                     start();
@@ -101,7 +127,57 @@ public class Run {
         primaryArrayStringChanged = new String[primaryArrayStrings.length];
         for(int i = 0;i<primaryArrayStrings.length;i++){
             String[] forChange = breakStringInToWords(primaryArrayStrings[i]);
-            String[] changed = forWork.changekElementToSymbol(forChange,numberElem,element);
+            String[] changed = stringTool.changekElementToSymbol(forChange,numberElem,element);
+            primaryArrayStringChanged[i] = getStringFromArr(changed);
+        }
+    }
+
+    public void wrongLetterA(String[] str){
+        for(int i = 0;i<primaryArrayStringChanged.length;i++){
+            String[] arrWords = breakStringInToWords(str[i]);
+            String[] wordsForChange = stringTool.changeTheMistakenlyPrintedLetterA(arrWords);
+            primaryArrayStringChanged[i] = getStringFromArr(wordsForChange);
+        }
+    }
+
+    public void wordSubstitution(){
+        System.out.println("Enter an expression that needs to be replaced");
+        String newWord = "";
+        int wordLength = 0;
+        scan = new Scanner(System.in);
+        if (scan.hasNext()) {
+            newWord = scan.next();
+        }
+        System.out.println("Enter the length of the word to be replaced");
+        if (scan.hasNext()) {
+            wordLength = scan.nextInt();
+        }
+
+        for (int i = 0;i<primaryArrayStrings.length;i++){
+String[] word = breakStringInToWords(primaryArrayStrings[i]);
+            String[] changed = stringTool.substitutionWordForSubstring(word,newWord,wordLength);
+            primaryArrayStringChanged[i] = getStringFromArr(changed);
+        }
+    }
+
+    public void leaveOnlyLettersAndSpaces(){
+        for (int i = 0;i<primaryArrayStrings.length;i++){
+            String[] word = breakStringInToWords(primaryArrayStrings[i]);
+            String[] changed = stringTool.deleteAllButLetters(word);
+            primaryArrayStringChanged[i] = getStringFromArr(changed);
+        }
+    }
+
+    public void givenLengthStartingWithVowel(){
+        System.out.println("Enter the length of the word");
+        scan = new Scanner(System.in);
+        int wordLength = 0;
+        if (scan.hasNext()) {
+            wordLength = scan.nextInt();
+        }
+        for (int i = 0;i<primaryArrayStrings.length;i++){
+            String[] word = breakStringInToWords(primaryArrayStrings[i]);
+            String[] changed = stringTool.wordsGivenLengthStartingWithVowel(word,wordLength);
             primaryArrayStringChanged[i] = getStringFromArr(changed);
         }
     }
