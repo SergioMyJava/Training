@@ -1,4 +1,4 @@
-package trainingday4.by.epam.training.task2;
+package trainingday4.by.epam.training.task2.entities;
 
 public class MinimumMaxRowElements {
 

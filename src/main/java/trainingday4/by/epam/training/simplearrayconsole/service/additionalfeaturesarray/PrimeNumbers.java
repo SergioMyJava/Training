@@ -21,22 +21,21 @@ public class PrimeNumbers {
         return null;
     }
 
-    public boolean chekForPrime(int input) {
-        boolean isComposite = false;
-        int i;
-        if (input == 1) {
+    private boolean chekForPrime(int input) {
+
+        if (input == 1 || input == 0) {
             return false;
         }
-        for (i = 2; i < input; i++) {
-            if (input % i == 0) {
-                isComposite = true;
-                break;
-            }
-        }
-        if (isComposite) {
-            return false;
-        } else {
+        if (input == 2) {
             return true;
         }
+        for (int i = 2; i < input; i++) {
+            if (input % i == 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        return false;
     }
 }

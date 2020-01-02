@@ -173,8 +173,8 @@ public class StartAppArray {
 
     private void mergeSort() {
         if (array != null) {
-            MergeSort sort = new MergeSort();
-            array.setArray(sort.sort(array.getArray()));
+            MergeSort merg = new MergeSort();
+            array.setArray(merg.sort(array.getArray()));
             System.out.println("That's what happened " + array.toString());
         } else {
             System.out.println("Create an array.");
@@ -184,8 +184,8 @@ public class StartAppArray {
 
     private void quickSort() {
         if (array != null) {
-            QuickSort sort = new QuickSort();
-            array.setArray(sort.sort(array.getArray()));
+            QuickSort quick = new QuickSort();
+            array.setArray(quick.sort(array.getArray()));
             System.out.println("That's what happened " + array.toString());
         } else {
             System.out.println("Create an array.");
@@ -195,8 +195,8 @@ public class StartAppArray {
 
     private void bubbleSort() {
         if (array != null) {
-            BubbleSort sort = new BubbleSort();
-            array.setArray(sort.sort(array.getArray()));
+            BubbleSort bubbl = new BubbleSort();
+            array.setArray(bubbl.sort(array.getArray()));
             System.out.println("That's what happened " + array.toString());
         } else {
             System.out.println("Create an array.");
@@ -212,8 +212,8 @@ public class StartAppArray {
         int index = 0;
         for (int y = 0; y < array.size(); y++) {
             index = binSearch.search(arr, enteredNumber);
-            if (index != -1) {
-                index = index;
+            if (index == -1) {
+                System.out.println("There is no such number in the array.");
             }
         }
         System.out.println("Your number is under the index " + index);
@@ -227,10 +227,8 @@ public class StartAppArray {
 
     private void maxMinInArray() {
         int[] sortedArr = sortArray(array);
-        System.out.println(sortedArr.toString());
         MinMaxInArray mm = new MinMaxInArray();
         int[] minMax = mm.getMinMax(sortedArr);
-        System.out.println(minMax.toString());
         int min = minMax[0];
         int max = minMax[1];
         System.out.println("Minimum Number " + min + " Maximum Number " + max);
@@ -239,18 +237,23 @@ public class StartAppArray {
     private void getAllPrimes() {
         PrimeNumbers prim = new PrimeNumbers();
         List primFromArr = prim.getPrimeNumbers(array.getArray());
-        System.out.println("Prime number " + primFromArr.toString());
+        if (primFromArr == null) {
+            System.out.println("There are no primes in the array.");
+        } else
+            System.out.println("Prime number " + primFromArr.toString());
     }
 
     private void fibonachNum() {
-        int a = 0;
-        int b = 1;
         List fib = new LinkedList();
-        for (int i = 0; i < array.size(); i++) {
-            for (int k = 2; k <= 17711; ++k) {
+        for (int i = 1; i <= array.size(); i++) {
+            int a = 0;
+            int b = 1;
+            int comparisonNumber = array.get(i);
+            for (int k = 2; k <= 1597; ++k) {
                 int next = a + b;
-                if (array.get(i) == next) {
-                    fib.add(array.get(i));
+                if (comparisonNumber == next) {
+                    fib.add(comparisonNumber);
+                    break;
                 }
                 a = b;
                 b = next;
@@ -262,7 +265,15 @@ public class StartAppArray {
     private void threeDigitNum() {
         ThreeDigitNumbers numberDi = new ThreeDigitNumbers();
         List forRet = numberDi.getThreeDigitNumbers(array.getArray());
+        if(forRet == null){
+            System.out.println("There are no three-digit numbers in the decimal record of which there are no identical digits.");
+        }
+        else
         System.out.println("All three-digit numbers in the decimal record of which there are no identical digits : " +
                 forRet.toString());
+    }
+
+    public static void main(String[] args) {
+
     }
 }

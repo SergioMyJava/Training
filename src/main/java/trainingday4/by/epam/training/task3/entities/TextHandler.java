@@ -93,34 +93,7 @@ public class TextHandler {
         return forReturn;
     }
 
-    public void printResultingString(String[] str) {
-        for (String a : str) {
-            System.out.print(a + " ");
-        }
-    }
-
     public static void main(String[] args) {
 
-
-//        String str = "1q2,ewret5654fgf";
-//        str = str.replaceAll("[\\d\\W]", "");
-//        System.out.println(str);
-//        char[] ch = str.toCharArray();
-//        char[] with = new char[ch.length * 2];
-//        int count = 0;
-//        for (int i = 0; i < ch.length; i++) {
-//            with[count] = ch[i];
-//            with[count + 1] = ' ';
-//            count += 2;
-//        }
-
-//        String str2 = new String(with);
-//        System.out.println(str2);
-
-
-        TextHandler test = new TextHandler();
-        String[] str = {"Ёркер", "баракара", "бастурма", "Аарак"};
-        str = test.wordsGivenLengthStartingWithVowel(str, 5);
-        test.printResultingString(str);
     }
 }
